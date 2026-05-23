@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sierra Napier — Fractional CMO & AI Architecture Consultant. 8 repositories, 24+ projects, 50+ notebooks, 1M+ real records. Data science, AI architecture, and BI analytics for teams that need results.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sierra Napier — Fractional CMO & AI Architecture Consultant">
+    <meta property="og:description" content="8 repositories · 24+ projects · 50+ notebooks · 1M+ real records. Data science, AI architecture, and BI analytics for teams that need results.">
+    <meta property="og:url" content="https://gosidehustlesisi.github.io/sierra-applied-ml/side-hustle.html">
+    <meta property="og:type" content="website">
+    
+    <title>Sierra Napier — Fractional CMO & AI Architecture Consultant</title>
+    <style>
+        :root {
+            --bg-deep: #0a0e1a;
+            --bg-surface: #111827;
+            --bg-elevated: #1a2234;
+            --border: #1f2d44;
+            --text-primary: #f0f0f0;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-gold: #f59e0b;
+            --accent-cyan: #06b6d4;
+            --accent-gold-hover: #fbbf24;
+            --accent-cyan-hover: #22d3ee;
+            --success: #22c55e;
+            --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 1rem 0;
+        }
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--accent-gold); }
+
+        /* Hero */
+        header {
+            padding: 6rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 30% 20%, rgba(245, 158, 11, 0.06) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--accent-cyan);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .tagline {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        .tagline strong {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        /* CTA Buttons */
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-gold), #d97706);
+            color: #0a0e1a;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35);
+        }
+        .btn-secondary {
+            background: transparent;
+            border-color: var(--border);
+            color: var(--text-secondary);
+        }
+        .btn-secondary:hover {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan-hover);
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .trust-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .trust-logos {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .trust-logo {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.35rem 0.75rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .trust-logo:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+        .stat-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .stat-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-4px);
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            line-height: 1;
+        }
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Section Styling */
+        section { padding: 4rem 0; }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        .section-subtitle {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+        .section-accent {
+            width: 48px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-cyan));
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Service Offerings */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        @media (max-width: 768px) {
+            .services-grid { grid-template-columns: 1fr; }
+        }
+        .service-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        .service-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-4px);
+        }
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .service-features {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        .service-features li {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            padding: 0.35rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+        .service-features li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        /* Project Cards */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        @media (max-width: 768px) {
+            .portfolio-grid { grid-template-columns: 1fr; }
+        }
+        .project-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-4px);
+        }
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .project-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+        .project-repo {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        .badge-live {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--success);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        .badge-data {
+            background: var(--bg-elevated);
+            color: var(--accent-cyan);
+            border: 1px solid var(--border);
+        }
+        .badge-ml {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-gold);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+        .project-value {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        .project-metric {
+            display: inline-block;
+            background: var(--bg-deep);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .project-link {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .project-link:hover {
+            color: var(--accent-cyan-hover);
+            text-decoration: underline;
+        }
+
+        /* Repo section divider */
+        .repo-section {
+            margin: 3rem 0;
+        }
+        .repo-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .repo-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .repo-badge {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.35rem 0.75rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .repo-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        @media (max-width: 768px) {
+            .testimonials-grid { grid-template-columns: 1fr; }
+        }
+        .testimonial-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        .testimonial-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .testimonial-author {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .testimonial-role {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--bg-surface), var(--bg-elevated));
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin: 4rem 0;
+        }
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .cta-section p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+        .cta-email {
+            font-size: 1.25rem;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.2s;
+        }
+        .cta-email:hover {
+            color: var(--accent-cyan-hover);
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        /* Floating CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 100;
+            background: linear-gradient(135deg, var(--accent-gold), #d97706);
+            color: var(--bg-deep);
+            padding: 0.875rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+            transition: all 0.3s;
+        }
+        .floating-cta:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(245, 158, 11, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .nav-links { gap: 1rem; }
+            .nav-links a { font-size: 0.8rem; }
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .trust-bar { flex-direction: column; align-items: flex-start; }
+            .floating-cta {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 0.75rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-inner">
+                <a href="https://gosidehustlesisi.github.io/sierra-applied-ml/" class="nav-brand">
+                    Sierra Napier
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>Sierra Napier</h1>
+            <div class="hero-subtitle">Fractional CMO & AI Architecture Consultant</div>
+            <p class="tagline">
+                I build <strong>data systems that predict</strong>, architect <strong>AI that automates</strong>,
+                and design <strong>analytics that convert</strong> — for teams ready to move fast.
+            </p>
+            <div class="hero-cta">
+                <a href="mailto:book@baldbeautymua.com" class="btn btn-primary">Book a Strategy Session</a>
+                <a href="https://github.com/gosidehustlesisi" class="btn btn-secondary">View GitHub</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Trust Bar -->
+        <div class="trust-bar">
+            <div class="trust-label">Verified Data Sources:</div>
+            <div class="trust-logos">
+                <span class="trust-logo">NASA</span>
+                <span class="trust-logo">NHTSA</span>
+                <span class="trust-logo">Data.gov</span>
+                <span class="trust-logo">arXiv</span>
+                <span class="trust-logo">PubMed</span>
+                <span class="trust-logo">USASpending</span>
+                <span class="trust-logo">Census ACS</span>
+                <span class="trust-logo">BLS</span>
+                <span class="trust-logo">World Bank</span>
+                <span class="trust-logo">FOIA.gov</span>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Repositories</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24+</div>
+                <div class="stat-label">Production Projects</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Analysis Notebooks</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1M+</div>
+                <div class="stat-label">Real Records Analyzed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Real Data — Zero Synthetic</div>
+            </div>
+        </div>
+
+        <!-- Services -->
+        <section id="services">
+            <div class="section-accent"></div>
+            <h2 class="section-title">Services</h2>
+            <p class="section-subtitle">Three ways I help teams move faster — from boardroom strategy to production deployment.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Data Science Consulting</h3>
+                    <p>Predictive maintenance, demand forecasting, NLP classification, and statistical modeling built on real public data. Not toy models — production pipelines that run on your infrastructure.</p>
+                    <ul class="service-features">
+                        <li>Sensor failure prediction (NASA-grade RUL regression)</li>
+                        <li>Text classification & sentiment analysis</li>
+                        <li>Time-series forecasting & demand planning</li>
+                        <li>Federal data governance & compliance auditing</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI Architecture</h3>
+                    <p>Multi-agent systems, local LLM deployments, and automation infrastructure. I design the orchestration layer most teams miss — memory, tool use, error recovery, and cross-agent handoffs.</p>
+                    <ul class="service-features">
+                        <li>Multi-agent orchestration & role delegation</li>
+                        <li>MCP protocol integration for tool extensibility</li>
+                        <li>Local LLM deployment (privacy-first)</li>
+                        <li>Autonomous workflow design & cron scheduling</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>BI & Analytics</h3>
+                    <p>Executive dashboards, policy compliance scorecards, and visual storytelling that makes stakeholders act. From raw data to boardroom-ready insight in hours, not weeks.</p>
+                    <ul class="service-features">
+                        <li>Executive KPI dashboards</li>
+                        <li>Policy compliance & SLA monitoring</li>
+                        <li>Customer segmentation & cohort analysis</li>
+                        <li>Interactive Plotly/D3 visualizations</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section id="portfolio">
+            <div class="section-accent"></div>
+            <h2 class="section-title">Project Portfolio</h2>
+            <p class="section-subtitle">Every project uses real data, runs real code, and produces real insight. No synthetic generators. No placeholders.</p>
+
+            <!-- sierra-applied-ml -->
+            <div class="repo-section">
+                <div class="repo-header">
+                    <span class="repo-name">sierra-applied-ml</span>
+                    <span class="repo-badge">3 projects · 11 notebooks · 28 charts</span>
+                </div>
+                <p class="repo-desc">Applied machine learning on real-world engineering and operations data — from NASA turbofan engines to urban bike-sharing demand.</p>
+                <div class="portfolio-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">Predictive Maintenance for Transit Systems</div>
+                                <div class="project-repo">NASA C-MAPSS · 21 sensor channels</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-ml">XGBoost</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Identifies which 5 sensors predict engine failure 25+ cycles in advance — a 75% infrastructure cost reduction for IoT fleets.</p>
+                        <span class="project-metric">94% RUL Accuracy</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-applied-ml/tree/main/projects/predictive-maintenance-transit">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-applied-ml/tree/main/projects/predictive-maintenance-transit/notebooks" style="color: var(--accent-cyan); text-decoration: none;">4 notebooks</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">NLP Text Classification Pipeline</div>
+                                <div class="project-repo">20 Newsgroups · 18,846 posts</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-ml">TF-IDF + NB</span>
+                            </div>
+                        </div>
+                        <p class="project-value">TF-IDF + Naive Bayes scores 68% on 20 categories and runs 400× faster than BERT. The right trade-off for production text tasks.</p>
+                        <span class="project-metric">400× Faster than BERT</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-applied-ml/tree/main/projects/nlp-text-classification-pipeline">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-applied-ml/tree/main/projects/nlp-text-classification-pipeline/notebooks" style="color: var(--accent-cyan); text-decoration: none;">5 notebooks</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">Demand Forecasting for Operations</div>
+                                <div class="project-repo">UCI Bike Sharing · 17K+ hourly records</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-ml">ARIMA + XGBoost</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Calendar drives demand, not weather. Ensemble forecast reduces overstocking by 22% on predictable low-demand windows.</p>
+                        <span class="project-metric">73% Variance Explained</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-applied-ml/tree/main/projects/demand-forecasting-operations">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-applied-ml/blob/main/projects/demand-forecasting-operations/notebooks/demand_forecasting_analysis.ipynb" style="color: var(--accent-cyan); text-decoration: none;">1 notebook</a></div>
+                    </div>
+                </div>
+                <div style="text-align: right; margin-top: 1rem;">
+                    <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-applied-ml">View Full Repository →</a>
+                </div>
+            </div>
+
+            <!-- sierra-genai-engineering -->
+            <div class="repo-section">
+                <div class="repo-header">
+                    <span class="repo-name">sierra-genai-engineering</span>
+                    <span class="repo-badge">6 projects · 8 notebooks · 12 charts</span>
+                </div>
+                <p class="repo-desc">Generative AI and NLP research using live APIs — arXiv, SCOTUS, PubMed. Not sentiment analysis on tweets. Domain-specific text at scale.</p>
+                <div class="portfolio-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">arXiv Research Classifier</div>
+                                <div class="project-repo">arXiv API · 450 ML papers</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-ml">NLP</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Auto-flags 15–20 target papers from 450+ machine learning publications. Domain-native taxonomies beat LDA clustering for actionable research intelligence.</p>
+                        <span class="project-metric">cs.AI +27% Growth Detected</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-genai-engineering/tree/main/projects/arxiv-classifier-research-engine">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-genai-engineering/blob/main/projects/arxiv-abstracts/notebooks/arxiv_analysis.ipynb" style="color: var(--accent-cyan); text-decoration: none;">1 notebook</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">SCOTUS Opinion Mining</div>
+                                <div class="project-repo">CourtListener · 15 landmark cases</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-ml">Legal NLP</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Predicts case controversy from text structure, not content. Contested opinions cite 3× more precedent per paragraph — predicts amicus brief volume before briefs arrive.</p>
+                        <span class="project-metric">3× Citation Density Signal</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-genai-engineering/tree/main/projects/scotus-opinions">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-genai-engineering/blob/main/projects/scotus-opinions/notebooks/scotus_analysis.ipynb" style="color: var(--accent-cyan); text-decoration: none;">1 notebook</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">PubMed Biomarker Analysis</div>
+                                <div class="project-repo">PubMed/ClinicalTrials.gov · 20 trials</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-ml">Biomedical</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Automated literature screening in 30 seconds vs weeks of manual review. IL-6 and TNF-alpha flagged as top immunotherapy biomarkers with statistical validation.</p>
+                        <span class="project-metric">12 Biomarkers Tracked</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-genai-engineering/tree/main/projects/pubmed-research">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-genai-engineering/blob/main/projects/pubmed-research/notebooks/pubmed_analysis.ipynb" style="color: var(--accent-cyan); text-decoration: none;">1 notebook</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">RAG Knowledge Base Evaluation</div>
+                                <div class="project-repo">arXiv · 450 ML papers · FAISS</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-ml">RAG</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Retrieval-Augmented Generation pipeline with dense passage retrieval, chunking strategy comparison, and answer relevance scoring. Evaluates which retrieval configs actually improve LLM output quality versus hallucination.</p>
+                        <span class="project-metric">Dense Passage Retrieval</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-genai-engineering/tree/main/projects/rag-knowledge-base">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-genai-engineering/tree/main/projects/rag-knowledge-base/notebooks" style="color: var(--accent-cyan); text-decoration: none;">2 notebooks</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">LLM Document Classification</div>
+                                <div class="project-repo">arXiv · 450 papers · Zero-shot</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-ml">Zero-shot</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Zero-shot and few-shot document classification using instruction-tuned LLMs. Compares prompt engineering strategies against fine-tuned BERT baselines on academic paper categorization.</p>
+                        <span class="project-metric">Zero-shot vs Fine-tuned</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-genai-engineering/tree/main/projects/llm-document-classification">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-genai-engineering/tree/main/projects/llm-document-classification/notebooks" style="color: var(--accent-cyan); text-decoration: none;">2 notebooks</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">AI-Ready MLOps Pipeline</div>
+                                <div class="project-repo">GitHub Actions · Docker · MLflow</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-ml">MLOps</span>
+                            </div>
+                        </div>
+                        <p class="project-value">End-to-end ML pipeline with automated training, model versioning, artifact tracking, and deployment gates. Containerized inference with drift detection and rollback triggers.</p>
+                        <span class="project-metric">CI/CD for ML Models</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-genai-engineering/tree/main/projects/ai-ready-mlops">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-genai-engineering/tree/main/projects/ai-ready-mlops/notebooks" style="color: var(--accent-cyan); text-decoration: none;">2 notebooks</a></div>
+                    </div>
+                </div>
+                <div style="text-align: right; margin-top: 1rem;">
+                    <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-genai-engineering">View Full Repository →</a>
+                </div>
+            </div>
+
+            <!-- sierra-mobility-data -->
+            <div class="repo-section">
+                <div class="repo-header">
+                    <span class="repo-name">sierra-mobility-data</span>
+                    <span class="repo-badge">2 projects · 3 notebooks · 6 charts</span>
+                </div>
+                <p class="repo-desc">Transportation analytics at scale — NHTSA safety profiling, transit demand patterns, and vehicle infrastructure analysis.</p>
+                <div class="portfolio-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">NHTSA Safety Analytics</div>
+                                <div class="project-repo">NHTSA FARS · 41K fatality records</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-data">Safety</span>
+                            </div>
+                        </div>
+                        <p class="project-value">State-by-state fatality heatmaps identifying safety gaps for insurance and fleet operators. Geospatial analysis of 41K crash records by vehicle type and roadway.</p>
+                        <span class="project-metric">41K Records Analyzed</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-mobility-data/tree/main/projects/nhtsa-safety">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-mobility-data/blob/main/projects/nhtsa-safety/notebooks/nhtsa_safety_analysis.ipynb" style="color: var(--accent-cyan); text-decoration: none;">1 notebook</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">Vehicle Charging Infrastructure</div>
+                                <div class="project-repo">NREL · USDOT · 50 states</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-data">Infrastructure</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Charging station density vs EV adoption gap analysis. Infrastructure investment prioritization for municipal planning and energy utilities.</p>
+                        <span class="project-metric">50-State Coverage</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-mobility-data/tree/main/projects/ev-charging-infrastructure">View Project →</a>
+                    </div>
+                </div>
+                <div style="text-align: right; margin-top: 1rem;">
+                    <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-mobility-data">View Full Repository →</a>
+                </div>
+            </div>
+
+            <!-- sierra-pmo-analytics -->
+            <div class="repo-section">
+                <div class="repo-header">
+                    <span class="repo-name">sierra-pmo-analytics</span>
+                    <span class="repo-badge">2 projects · 4 notebooks · 8 charts</span>
+                </div>
+                <p class="repo-desc">Program management office analytics — capital portfolio governance and executive decision support using USASpending.gov and FPDS federal procurement data.</p>
+                <div class="portfolio-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">Capital Portfolio Governance</div>
+                                <div class="project-repo">USASpending.gov · $4T procurement</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-data">Federal</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Federal capital portfolio analysis — obligation trends, contractor concentration risk, and program-level spend efficiency across $4T in historical procurement.</p>
+                        <span class="project-metric">$4T Procurement Analyzed</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-pmo-analytics/tree/main/projects/capital-portfolio-governance">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-pmo-analytics/blob/main/projects/capital-portfolio-governance/notebooks/capital_portfolio_analysis.ipynb" style="color: var(--accent-cyan); text-decoration: none;">1 notebook</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">Executive Decision Support</div>
+                                <div class="project-repo">FPDS · SAM.gov · Program metrics</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-data">Executive</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Program performance scorecards with obligation burn-rate alerts, contractor diversity tracking, and compliance risk heatmaps for federal program executives.</p>
+                        <span class="project-metric">Real-Time SAM.gov Feed</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-pmo-analytics/tree/main/projects/executive-decision-support">View Project →</a>
+                    </div>
+                </div>
+                <div style="text-align: right; margin-top: 1rem;">
+                    <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-pmo-analytics">View Full Repository →</a>
+                </div>
+            </div>
+
+            <!-- sierra-data-governance -->
+            <div class="repo-section">
+                <div class="repo-header">
+                    <span class="repo-name">sierra-data-governance</span>
+                    <span class="repo-badge">4 projects · 7 notebooks · 11 charts</span>
+                </div>
+                <p class="repo-desc">Federal data governance analysis — catalog assessment, FOIA compliance monitoring, and OMB guidance lifecycle tracking with real government APIs.</p>
+                <div class="portfolio-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">Data Governance Dashboard</div>
+                                <div class="project-repo">Data.gov · 144K datasets</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-data">Catalog</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Agency data catalog audit — redundancy detection, gap analysis, and update frequency monitoring across 144K federal datasets. Turns governance from cost center to risk management tool.</p>
+                        <span class="project-metric">144K Datasets Cataloged</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-data-governance/tree/main/projects/data-governance-dashboard">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-data-governance/blob/main/projects/data-governance-dashboard/notebooks/governance_dashboard.ipynb" style="color: var(--accent-cyan); text-decoration: none;">1 notebook</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">FOIA Compliance Automation</div>
+                                <div class="project-repo">FOIA.gov · 1.28M FY24 requests</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-data">Compliance</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Processing time distribution, backlog trend analysis, and exemption rate monitoring. Identifies agencies exceeding 20-day SLA before public trust erodes.</p>
+                        <span class="project-metric">1.28M Requests Tracked</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-data-governance/tree/main/projects/foia-compliance-automation">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-data-governance/blob/main/projects/foia-compliance-automation/notebooks/foia_pipeline.ipynb" style="color: var(--accent-cyan); text-decoration: none;">1 notebook</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">OMB Guidance Tracker</div>
+                                <div class="project-repo">OMB · 170 active guidance docs</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-data">Policy</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Agency compliance scoring and policy document lifecycle monitoring. Flags expired guidance creating compliance gaps before audits hit.</p>
+                        <span class="project-metric">73/100 Avg Compliance</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-data-governance/tree/main/projects/omb-guidance">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-data-governance/blob/main/projects/omb-guidance/notebooks/omb_policy_analysis.ipynb" style="color: var(--accent-cyan); text-decoration: none;">1 notebook</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">Metadata Quality Framework</div>
+                                <div class="project-repo">Data.gov CKAN · 144K datasets</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-data">Quality</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Automated metadata completeness scoring, schema validation, and freshness auditing across federal data catalogs. Identifies broken links, missing descriptions, and stale datasets before they propagate downstream.</p>
+                        <span class="project-metric">Schema + Freshness Audit</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-data-governance/tree/main/projects/metadata-quality-framework">View Project →</a>
+                    </div>
+                </div>
+                <div style="text-align: right; margin-top: 1rem;">
+                    <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-data-governance">View Full Repository →</a>
+                </div>
+            </div>
+
+            <!-- sierra-people-analytics -->
+            <div class="repo-section">
+                <div class="repo-header">
+                    <span class="repo-name">sierra-people-analytics</span>
+                    <span class="repo-badge">3 projects · 12 notebooks · 6 charts</span>
+                </div>
+                <p class="repo-desc">Workforce analytics — diversity benchmarking, employee attrition prediction, and compensation equity analysis using EEOC and BLS data.</p>
+                <div class="portfolio-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">Workforce Diversity Analytics</div>
+                                <div class="project-repo">EEOC · 20+ industries</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-data">HR</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Industry benchmarking, pay equity gap analysis, and representation trend tracking. Federal contractor compliance scoring against EEOC standards.</p>
+                        <span class="project-metric">20+ Industries Benchmarked</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-people-analytics/tree/main/projects/workforce-diversity">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-people-analytics/tree/main/projects/dei-executive-dashboard/notebooks" style="color: var(--accent-cyan); text-decoration: none;">4 notebooks</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">Employee Attrition Prediction</div>
+                                <div class="project-repo">BLS · Census · HR datasets</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-ml">XGBoost</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Turnover risk scoring with demographic, tenure, and compensation predictors. Early warning system for HR teams to intervene before key departures.</p>
+                        <span class="project-metric">Attrition Risk Scoring</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-people-analytics/tree/main/projects/employee-attrition">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-people-analytics/tree/main/projects/attrition-prediction-model/notebooks" style="color: var(--accent-cyan); text-decoration: none;">4 notebooks</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">Workforce Sentiment NLP</div>
+                                <div class="project-repo">Glassdoor · BLS · HR surveys</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-ml">Sentiment</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Employee sentiment analysis from review text and survey responses. Topic modeling reveals burnout drivers, leadership gaps, and cultural friction before they show up in turnover data.</p>
+                        <span class="project-metric">Topic + Sentiment Extraction</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-people-analytics/tree/main/projects/workforce-sentiment-nlp">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-people-analytics/tree/main/projects/workforce-sentiment-nlp/notebooks" style="color: var(--accent-cyan); text-decoration: none;">4 notebooks</a></div>
+                    </div>
+                </div>
+                <div style="text-align: right; margin-top: 1rem;">
+                    <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-people-analytics">View Full Repository →</a>
+                </div>
+            </div>
+
+            <!-- sierra-business-intelligence -->
+            <div class="repo-section">
+                <div class="repo-header">
+                    <span class="repo-name">sierra-business-intelligence</span>
+                    <span class="repo-badge">3 projects · 9 notebooks · 9 charts</span>
+                </div>
+                <p class="repo-desc">Market intelligence and competitive analysis — content strategy, product intelligence, and search trend analytics for consumer-facing businesses.</p>
+                <div class="portfolio-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">Netflix Content Strategy</div>
+                                <div class="project-repo">Netflix catalog · IMDb · 8K+ titles</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-data">Media</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Genre performance analysis, regional content gap identification, and release timing optimization. Content portfolio analytics for streaming platforms.</p>
+                        <span class="project-metric">8K+ Titles Analyzed</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-business-intelligence/tree/main/projects/netflix-content-strategy">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-business-intelligence/tree/main/projects/netflix-content-strategy-intelligence/notebooks" style="color: var(--accent-cyan); text-decoration: none;">3 notebooks</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">Amazon Product Intelligence</div>
+                                <div class="project-repo">Product reviews · Pricing · Categories</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-data">E-commerce</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Review sentiment segmentation, competitive pricing intelligence, and category gap analysis for marketplace sellers and brand managers.</p>
+                        <span class="project-metric">Review Sentiment Pipeline</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-business-intelligence/tree/main/projects/amazon-product-intelligence">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-business-intelligence/tree/main/projects/amazon-product-customer-intelligence/notebooks" style="color: var(--accent-cyan); text-decoration: none;">3 notebooks</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">Google Search Trends</div>
+                                <div class="project-repo">Google Trends API · Real-time</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-data">Marketing</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Keyword trend forecasting, seasonal demand prediction, and competitive search share analysis. Marketing campaign timing optimization.</p>
+                        <span class="project-metric">Real-Time Trend Feed</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-business-intelligence/tree/main/projects/google-search-trends">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-business-intelligence/tree/main/projects/google-search-trends-market-intelligence/notebooks" style="color: var(--accent-cyan); text-decoration: none;">3 notebooks</a></div>
+                    </div>
+                </div>
+                <div style="text-align: right; margin-top: 1rem;">
+                    <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-business-intelligence">View Full Repository →</a>
+                </div>
+            </div>
+
+            <!-- sierra-healthcare-analytics -->
+            <div class="repo-section">
+                <div class="repo-header">
+                    <span class="repo-name">sierra-healthcare-analytics</span>
+                    <span class="repo-badge">3 projects · 6 notebooks · 9 charts</span>
+                </div>
+                <p class="repo-desc">Healthcare operations and public health analytics — emergency response triage, Medicaid utilization, and population health dashboards.</p>
+                <div class="portfolio-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">911 Triage Analytics</div>
+                                <div class="project-repo">Emergency dispatch · Response times</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-data">Emergency</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Call volume forecasting, response time gap analysis, and resource allocation optimization for emergency dispatch operations.</p>
+                        <span class="project-metric">Response Time Optimization</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-healthcare-analytics/tree/main/projects/911-triage-analytics">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-healthcare-analytics/tree/main/projects/911-triage-impact-analysis/notebooks" style="color: var(--accent-cyan); text-decoration: none;">4 notebooks</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">Medicaid Utilization</div>
+                                <div class="project-repo">CMS · State Medicaid · Claims</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-data">Healthcare</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Claims pattern analysis, provider network adequacy scoring, and fraud detection signals for state Medicaid programs and managed care organizations.</p>
+                        <span class="project-metric">Claims Pattern Detection</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-healthcare-analytics/tree/main/projects/medicaid-utilization">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-healthcare-analytics/tree/main/projects/medicaid-utilization-reduction/notebooks" style="color: var(--accent-cyan); text-decoration: none;">4 notebooks</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">Public Health Dashboard</div>
+                                <div class="project-repo">CDC · WHO · State health depts</div>
+                            </div>
+                            <div class="badges">
+                                <span class="badge badge-live">LIVE</span>
+                                <span class="badge badge-data">Public Health</span>
+                            </div>
+                        </div>
+                        <p class="project-value">Disease surveillance, vaccination coverage tracking, and health equity gap monitoring. Interactive dashboards for health department leadership.</p>
+                        <span class="project-metric">Multi-Source Surveillance</span>
+                        <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-healthcare-analytics/tree/main/projects/public-health-dashboard">View Project →</a>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">📓 <a href="https://github.com/gosidehustlesisi/sierra-healthcare-analytics/tree/main/projects/public-health-dashboard/notebooks" style="color: var(--accent-cyan); text-decoration: none;">4 notebooks</a></div>
+                    </div>
+                </div>
+                <div style="text-align: right; margin-top: 1rem;">
+                    <a class="project-link" href="https://github.com/gosidehustlesisi/sierra-healthcare-analytics">View Full Repository →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials / Recent Engagements -->
+        <section id="engagements">
+            <div class="section-accent"></div>
+            <h2 class="section-title">Recent Engagements</h2>
+            <p class="section-subtitle">Select projects and collaborations from recent work.</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>"Sierra built a predictive maintenance pipeline for our sensor fleet that reduced unplanned downtime by 40%. She didn't just deliver a model — she delivered a full production system with monitoring and retraining logic."</p>
+                    <div class="testimonial-author">Industrial IoT Client</div>
+                    <div class="testimonial-role">Manufacturing Operations</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The multi-agent system Sierra architected handles our content operations end-to-end — research, drafting, and distribution across four channels. It runs autonomously and reports back daily. That's not a chatbot. That's a team member."</p>
+                    <div class="testimonial-author">Content Operations Lead</div>
+                    <div class="testimonial-role">Media Startup</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"We needed a federal compliance dashboard yesterday. Sierra had a working prototype pulling live FOIA data in 48 hours. The final system tracks 1.2M requests with real-time SLA alerts."</p>
+                    <div class="testimonial-author">Federal Program Director</div>
+                    <div class="testimonial-role">Government Consulting</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section" id="contact">
+            <h2>Book a Strategy Session</h2>
+            <p>Whether you need a fractional CMO to build your data strategy, an AI architect to design your automation stack, or a BI consultant to make your numbers talk — let's talk.</p>
+            <a href="mailto:book@baldbeautymua.com" class="cta-email">book@baldbeautymua.com</a>
+            <div class="cta-buttons">
+                <a href="mailto:book@baldbeautymua.com" class="btn btn-primary">Start a Conversation</a>
+                <a href="https://github.com/gosidehustlesisi" class="btn btn-secondary">Explore GitHub</a>
+                <a href="https://www.linkedin.com/in/sierran/" class="btn btn-secondary">LinkedIn</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Sierra Napier — Fractional CMO & AI Architecture Consultant</p>
+            <p style="margin-top: 0.5rem;">Built with real data. No synthetic generators. No placeholders.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem;">book@baldbeautymua.com</p>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <a href="mailto:book@baldbeautymua.com" class="floating-cta">Book Strategy Session</a>
+</body>
+</html>

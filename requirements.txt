@@ -1,0 +1,33 @@
+pytest>=7.0
+black>=22.0
+flake8>=5.0
+mypy>=0.990
+
+pandas>=1.5
+numpy>=1.23
+scikit-learn>=1.2
+xgboost>=1.7
+prophet>=1.1
+
+# NLP
+transformers>=4.30
+torch>=2.0
+tokenizers>=0.13
+spacy>=3.5
+
+# Serving
+fastapi>=0.100
+uvicorn>=0.23
+
+# Viz
+matplotlib>=3.6
+seaborn>=0.12
+plotly>=5.14
+
+# Data
+dbt-core>=1.5
+polars>=0.18
+
+# MLOps
+mlflow>=2.5
+docker>=6.0

@@ -1,0 +1,33 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Data (keep raw, ignore processed)
+data/processed/
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Models
+models/*.pkl
+models/*.joblib
+
+# Reports
+reports/*.pdf
+reports/*.html

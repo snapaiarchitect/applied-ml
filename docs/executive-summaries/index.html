@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Summaries — Sierra Napier</title>
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --surface: #12121a;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent: #d4a853;
+            --border: #1e293b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container { max-width: 800px; width: 100%; }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        .summary-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .summary-card:hover {
+            transform: translateX(4px);
+            border-color: var(--accent);
+        }
+        .summary-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        .summary-info p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        .download-btn {
+            background: var(--accent);
+            color: var(--bg);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+            white-space: nowrap;
+        }
+        .download-btn:hover { opacity: 0.9; }
+        .back-link {
+            margin-top: 2rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .back-link:hover { color: var(--accent); }
+        @media (max-width: 600px) {
+            .summary-card { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .download-btn { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📄 Executive Summaries</h1>
+        <p class="subtitle">One-page PDF overviews of each portfolio domain for recruiters and hiring managers</p>
+
+        <div class="summary-card">
+            <div class="summary-info">
+                <h3>Applied ML</h3>
+                <p>NASA predictive maintenance · NLP classification · Demand forecasting</p>
+            </div>
+            <a href="exec_summary_applied_ml.pdf" class="download-btn" download>Download PDF</a>
+        </div>
+
+        <div class="summary-card">
+            <div class="summary-info">
+                <h3>GenAI Engineering</h3>
+                <p>arXiv research engine · SCOTUS text mining · PubMed biomarker analysis</p>
+            </div>
+            <a href="exec_summary_genai.pdf" class="download-btn" download>Download PDF</a>
+        </div>
+
+        <div class="summary-card">
+            <div class="summary-info">
+                <h3>Data Governance</h3>
+                <p>Data.gov catalog analysis · FOIA compliance · OMB guidance lifecycle</p>
+            </div>
+            <a href="exec_summary_governance.pdf" class="download-btn" download>Download PDF</a>
+        </div>
+
+        <div class="summary-card">
+            <div class="summary-info">
+                <h3>Mobility Data</h3>
+                <p>WMATA ridership · NHTSA safety analysis · BTS flight delays</p>
+            </div>
+            <a href="exec_summary_mobility.pdf" class="download-btn" download>Download PDF</a>
+        </div>
+
+        <div class="summary-card">
+            <div class="summary-info">
+                <h3>Public Sector Insights</h3>
+                <p>Census demographics · BLS employment · World Bank development</p>
+            </div>
+            <a href="exec_summary_public_sector.pdf" class="download-btn" download>Download PDF</a>
+        </div>
+
+        <a href="https://gosidehustlesisi.github.io/sierra-applied-ml/" class="back-link">← Back to Portfolio</a>
+    </div>
+</body>
+</html>

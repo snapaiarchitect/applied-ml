@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sierra Napier — Applied Machine Learning. NASA turbofan RUL prediction, UCI bike demand forecasting, 20 Newsgroups NLP. 56,856+ real records.">
+    <title>Applied ML — Sierra Napier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-deep:#0f1115; --bg-surface:#111827; --bg-elevated:#1a2234; --border:#1f2d44; --text-primary:#f0f0f0; --text-secondary:#94a3b8; --text-muted:#64748b; --accent-purple:#8b5cf6; --accent-teal:#14b8a6; }
+        *{margin:0;padding:0;box-sizing:border-box;} html{scroll-behavior:smooth;}
+        body{font-family:'Inter',system-ui,sans-serif;background:var(--bg-deep);color:var(--text-primary);line-height:1.6;}
+        .container{max-width:1200px;margin:0 auto;padding:0 2rem;}
+        nav{position:sticky;top:0;background:rgba(15,17,21,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100;padding:1rem 0;}
+        .nav-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+        .nav-brand{display:flex;align-items:center;gap:0.75rem;font-weight:700;font-size:1.1rem;color:var(--text-primary);text-decoration:none;}
+        .nav-links{display:flex;gap:2rem;list-style:none;}
+        .nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.9rem;font-weight:500;}
+        .nav-links a:hover{color:var(--accent-purple);}
+        .hero{padding:6rem 0 4rem;text-align:center;}
+        .hero h1{font-size:3rem;font-weight:800;margin-bottom:1rem;background:linear-gradient(135deg,var(--accent-purple) 0%,var(--accent-teal) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+        .hero .subtitle{font-size:1.25rem;color:var(--text-secondary);max-width:700px;margin:0 auto 2rem;}
+        .hero .stats{display:flex;justify-content:center;gap:3rem;margin-top:2rem;flex-wrap:wrap;}
+        .hero .stat{text-align:center;}
+        .hero .stat-number{font-size:2.5rem;font-weight:800;color:var(--accent-purple);font-family:'JetBrains Mono',monospace;}
+        .hero .stat-label{font-size:0.9rem;color:var(--text-muted);margin-top:0.25rem;}
+        .section{padding:4rem 0;border-top:1px solid var(--border);}
+        .section-title{font-size:2rem;font-weight:700;margin-bottom:0.5rem;}
+        .section-subtitle{color:var(--text-secondary);margin-bottom:2rem;}
+        .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:1.5rem;}
+        .project-card{background:var(--bg-elevated);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:transform 0.2s,box-shadow 0.2s;}
+        .project-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(139,92,246,0.1);}
+        .project-card h3{font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:var(--accent-purple);}
+        .project-card .tag{display:inline-block;background:rgba(139,92,246,0.15);color:var(--accent-purple);padding:0.25rem 0.75rem;border-radius:20px;font-size:0.8rem;font-weight:600;margin-bottom:0.75rem;}
+        .project-card p{color:var(--text-secondary);font-size:0.95rem;margin-bottom:0.75rem;}
+        .project-card .meta{font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--text-muted);}
+        .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem;}
+        .chart-box{background:var(--bg-elevated);border:1px solid var(--border);border-radius:8px;overflow:hidden;cursor:pointer;}
+        .chart-box:hover{border-color:var(--accent-purple);}
+        .chart-box img{width:100%;display:block;background:var(--bg-surface);}
+        .chart-caption{padding:0.75rem 1rem;font-size:0.85rem;color:var(--text-secondary);border-top:1px solid var(--border);}
+        .tech-grid{display:flex;flex-wrap:wrap;gap:0.75rem;}
+        .tech-item{background:var(--bg-elevated);border:1px solid var(--border);padding:0.5rem 1rem;border-radius:6px;font-size:0.9rem;color:var(--text-secondary);}
+        footer{border-top:1px solid var(--border);padding:3rem 0;text-align:center;color:var(--text-muted);}
+        footer a{color:var(--text-secondary);text-decoration:none;} footer a:hover{color:var(--accent-purple);}
+        .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.5s,transform 0.5s;}
+        .reveal.visible{opacity:1;transform:translateY(0);}
+    </style>
+</head>
+<body>
+<nav><div class="container"><div class="nav-inner">
+    <a href="#" class="nav-brand"><span style="color:var(--accent-purple);">◆</span> Sierra Napier</a>
+    <ul class="nav-links"><li><a href="#projects">Projects</a></li><li><a href="#gallery">Figures</a></li><li><a href="#tech">Stack</a></li></ul>
+</div></div></nav>
+
+<section class="hero"><div class="container">
+    <h1>Applied Machine Learning</h1>
+    <p class="subtitle">End-to-end ML on verified public datasets — NASA turbofan telemetry, UCI bike-sharing demand, and 20 Newsgroups text classification. Zero synthetic records.</p>
+    <div class="stats">
+        <div class="stat"><div class="stat-number">3</div><div class="stat-label">Projects</div></div>
+        <div class="stat"><div class="stat-number">56K+</div><div class="stat-label">Real Records</div></div>
+        <div class="stat"><div class="stat-number">23</div><div class="stat-label">Figures</div></div>
+        <div class="stat"><div class="stat-number">11</div><div class="stat-label">Notebooks</div></div>
+    </div>
+</div></section>
+
+<section id="projects" class="section"><div class="container">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-subtitle">Production-grade ML pipelines on real public data</p>
+    <div class="projects-grid">
+        <div class="project-card reveal">
+            <span class="tag">Predictive Maintenance</span>
+            <h3>NASA Turbofan RUL Prediction</h3>
+            <p>Predicts Remaining Useful Life for turbofan engines using NASA C-MAPSS sensor telemetry. Rolling-window feature engineering identifies degradation patterns ~15 cycles before failure.</p>
+            <div class="meta">100 engines · 20,631 cycles · ~15 MAE · XGBoost + Random Forest · 8 figures</div>
+        </div>
+        <div class="project-card reveal">
+            <span class="tag">Demand Forecasting</span>
+            <h3>Capital Bikeshare Demand Forecasting</h3>
+            <p>Hourly and daily demand forecasting for Washington D.C. bikeshare. SARIMA + XGBoost ensemble captures commuter peaks, weather effects, and seasonal trends.</p>
+            <div class="meta">17,379 hourly records · ~30 MAE · ~18% MAPE · SARIMA + XGBoost · 8 figures</div>
+        </div>
+        <div class="project-card reveal">
+            <span class="tag">NLP</span>
+            <h3>20 Newsgroups Text Classification</h3>
+            <p>Automatic categorization of 18,846 real Usenet posts across 20 topics. TF-IDF vectorization with Naive Bayes, Logistic Regression, and Linear SVM comparison.</p>
+            <div class="meta">18,846 documents · 20 classes · 67.9% accuracy · TF-IDF + scikit-learn · 7 figures</div>
+        </div>
+    </div>
+</div></section>
+
+<section id="gallery" class="section"><div class="container">
+    <h2 class="section-title">Figure Gallery</h2>
+    <p class="section-subtitle">23 analysis outputs from real data</p>
+    <div class="gallery-grid">
+        <div class="chart-box reveal"><img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-applied-ml/main/projects/predictive-maintenance-nasa/figures/01_sensor_degradation.png" alt=""><div class="chart-caption">Sensor Degradation Curves — HPC/LPC temperatures diverge before failure</div></div>
+        <div class="chart-box reveal"><img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-applied-ml/main/projects/predictive-maintenance-nasa/figures/02_rul_prediction.png" alt=""><div class="chart-caption">Predicted vs Actual RUL — XGBoost clusters tightly around perfect prediction</div></div>
+        <div class="chart-box reveal"><img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-applied-ml/main/projects/predictive-maintenance-nasa/figures/03_feature_importance.png" alt=""><div class="chart-caption">Feature Importance — Rolling-mean features dominate raw sensor readings</div></div>
+        <div class="chart-box reveal"><img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-applied-ml/main/projects/demand-forecasting-bikeshare/figures/01_hourly_demand_pattern.png" alt=""><div class="chart-caption">Hourly Demand Pattern — Twin peaks at 8am and 6pm commuter times</div></div>
+        <div class="chart-box reveal"><img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-applied-ml/main/projects/demand-forecasting-bikeshare/figures/02_seasonal_trend.png" alt=""><div class="chart-caption">Seasonal Trend — Clear summer peak, winter trough in D.C. bike usage</div></div>
+        <div class="chart-box reveal"><img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-applied-ml/main/projects/nlp-text-classification/figures/01_class_distribution.png" alt=""><div class="chart-caption">Class Distribution — comp.graphics and rec.sport.hockey most represented</div></div>
+    </div>
+</div></section>
+
+<section id="tech" class="section"><div class="container">
+    <h2 class="section-title">Tech Stack</h2>
+    <div class="tech-grid">
+        <div class="tech-item">Python 3.11</div><div class="tech-item">pandas</div><div class="tech-item">scikit-learn</div>
+        <div class="tech-item">XGBoost</div><div class="tech-item">SARIMA</div><div class="tech-item">TensorFlow</div>
+        <div class="tech-item">matplotlib</div><div class="tech-item">seaborn</div><div class="tech-item">Jupyter</div>
+    </div>
+</div></section>
+
+<footer><div class="container">
+    <p><a href="https://github.com/gosidehustlesisi">GitHub</a> · <a href="https://linkedin.com/in/sierranapier">LinkedIn</a> · <a href="mailto:sierra.napier@e3-ai.com">Email</a></p>
+    <p>Built with real data. No synthetic shortcuts.</p>
+</div></footer>
+
+<script>
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

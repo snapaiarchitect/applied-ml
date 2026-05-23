@@ -1,0 +1,62 @@
+{
+  "version": "1.0.0",
+  "project": "nlp-text-classification-pipeline",
+  "dataset": {
+    "source": "20 Newsgroups (sklearn)",
+    "url": "https://scikit-learn.org/stable/modules/generated/sklearn.datasets.fetch_20newsgroups.html",
+    "records": 18846,
+    "train_samples": 11314,
+    "test_samples": 7532,
+    "n_categories": 20,
+    "last_updated": "1995-01-01",
+    "citation": "Lang, K. (1995). Newsweeder: Learning to filter netnews. ICML 1995."
+  },
+  "models": {
+    "naive_bayes": {
+      "accuracy": 0.6787,
+      "precision": 0.6847,
+      "recall": 0.6787,
+      "f1": 0.6721,
+      "vectorizer": "TfidfVectorizer",
+      "max_features": 5000,
+      "ngram_range": "(1, 2)",
+      "notes": "Best performer; fast training and inference"
+    },
+    "logistic_regression": {
+      "accuracy": 0.6676,
+      "precision": 0.6762,
+      "recall": 0.6676,
+      "f1": 0.6649,
+      "notes": "Strong baseline; interpretable weights"
+    },
+    "linear_svm": {
+      "accuracy": 0.6642,
+      "precision": 0.6671,
+      "recall": 0.6642,
+      "f1": 0.6624,
+      "notes": "Margin-based; competitive"
+    }
+  },
+  "feature_engineering": {
+    "vectorizer": "TfidfVectorizer",
+    "max_features": 5000,
+    "ngram_range": "(1, 2)",
+    "sublinear_tf": true,
+    "stop_words": "english"
+  },
+  "figures": [
+    "class_distribution.png",
+    "model_comparison.png",
+    "confusion_matrix.png",
+    "top_tfidf_features.png"
+  ],
+  "notebooks": [
+    "01_data_exploration.ipynb",
+    "02_baseline_model.ipynb",
+    "03_bert_finetuning.ipynb",
+    "04_llm_prompt_engineering.ipynb",
+    "nlp_classification_analysis.ipynb"
+  ],
+  "status": "complete",
+  "executed": true
+}

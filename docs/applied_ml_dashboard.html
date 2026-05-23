@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Applied ML Dashboard</title>
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<style>
+:root{--bg:#0f1115;--surface:#1a2234;--border:#1f2d44;--text:#f0f0f0;--muted:#94a3b8;--accent:#8b5cf6;}
+*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);padding:2rem;}
+h1{text-align:center;margin-bottom:0.5rem;}p.subtitle{text-align:center;color:var(--muted);margin-bottom:2rem;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(450px,1fr));gap:1.5rem;}
+.chart{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem;}
+.chart h3{font-size:1rem;margin-bottom:0.5rem;color:var(--accent);}
+.loading{color:var(--muted);font-size:0.9rem;text-align:center;padding:2rem;}
+</style>
+</head>
+<body>
+<h1>🔧 Applied ML Dashboard</h1>
+<p class="subtitle">NASA turbofan, bike demand, and NLP classification analytics</p>
+<div class="grid">
+<div class="chart"><h3>Bike Demand by Hour</h3><div id="bike-hour" class="loading">Loading...</div></div>
+<div class="chart"><h3>Bike Demand by Season</h3><div id="bike-season" class="loading">Loading...</div></div>
+<div class="chart"><h3>20 Newsgroups Class Distribution</h3><div id="newsgroups" class="loading">Loading...</div></div>
+<div class="chart"><h3>RUL Prediction (NASA C-MAPSS)</h3><div id="nasa-rul" class="loading">Loading...</div></div>
+<div class="chart"><h3>Temperature vs RUL</h3><div id="nasa-temp" class="loading">Loading...</div></div>
+<div class="chart"><h3>Feature Importance</h3><div id="features" class="loading">Loading...</div></div>
+</div>
+
+<script>
+const layout={paper_bgcolor:'rgba(0,0,0,0)',plot_bgcolor:'rgba(0,0,0,0)',font:{color:'#f0f0f0',family:'Inter,sans-serif'},margin:{t:30,r:20,b:50,l:60}};
+const config={responsive:true,displayModeBar:false};
+
+// Bike by Hour
+Papa.parse('https://raw.githubusercontent.com/gosidehustlesisi/sierra-applied-ml/main/projects/demand-forecasting-operations/data/hour.csv',{download:true,header:true,complete:function(r){
+const hours={};
+r.data.forEach(d=>{if(d.hr)hours[d.hr]=(hours[d.hr]||0)+parseInt(d.cnt||0);});
+Plotly.newPlot('bike-hour',[{
+  x:Object.keys(hours).sort((a,b)=>a-b),y:Object.values(hours),type:'bar',
+  marker:{color:'#8b5cf6',line:{color:'#a78bfa',width:1}}
+}],{...layout,xaxis:{title:'Hour'},yaxis:{title:'Total Rides'}},config);
+}});
+
+// Bike by Season
+Papa.parse('https://raw.githubusercontent.com/gosidehustlesisi/sierra-applied-ml/main/projects/demand-forecasting-operations/data/day.csv',{download:true,header:true,complete:function(r){
+const seasons={1:'Spring',2:'Summer',3:'Fall',4:'Winter'},counts={};
+r.data.forEach(d=>{if(d.season){const s=seasons[d.season]||d.season;counts[s]=(counts[s]||0)+parseInt(d.cnt||0);}});
+Plotly.newPlot('bike-season',[{
+  labels:Object.keys(counts),values:Object.values(counts),type:'pie',
+  hole:0.4,marker:{colors:['#10b981','#f59e0b','#ef4444','#06b6d4']}
+}],{...layout},config);
+}});
+
+// Newsgroups
+Papa.parse('https://raw.githubusercontent.com/gosidehustlesisi/sierra-applied-ml/main/projects/nlp-text-classification-pipeline/data/raw/20newsgroups_stats.csv',{download:true,header:true,complete:function(r){
+const cats={},vals={};
+r.data.forEach(d=>{if(d.category){cats[d.category]=(cats[d.category]||0)+1;vals[d.category]=(vals[d.category]||0)+parseInt(d.count||0);}});
+Plotly.newPlot('newsgroups',[{
+  x:Object.keys(cats),y:Object.values(vals),type:'bar',
+  marker:{color:'#06b6d4',line:{color:'#22d3ee',width:1}}
+}],{...layout,xaxis:{tickangle:-45},yaxis:{title:'Documents'}},config);
+}});
+
+// NASA RUL
+Papa.parse('https://raw.githubusercontent.com/gosidehustlesisi/sierra-applied-ml/main/projects/predictive-maintenance-transit/data/combined_risk_scores.csv',{download:true,header:true,complete:function(r){
+const engines=[],ruls=[];
+r.data.forEach((d,i)=>{if(i<50&&d.engine_id){engines.push(d.engine_id);ruls.push(parseFloat(d.rul||0));}});
+Plotly.newPlot('nasa-rul',[{
+  x:engines,y:ruls,type:'scatter',mode:'markers',
+  marker:{size:10,color:ruls.map(v=>v<50?'#ef4444':v<100?'#f59e0b':'#10b981')}
+}],{...layout,xaxis:{title:'Engine ID'},yaxis:{title:'RUL (cycles)'}},config);
+}});
+
+// NASA Temperature vs RUL
+Papa.parse('https://raw.githubusercontent.com/gosidehustlesisi/sierra-applied-ml/main/projects/predictive-maintenance-transit/data/combined_risk_scores.csv',{download:true,header:true,complete:function(r){
+const temps=[],ruls=[];
+r.data.forEach(d=>{if(d.temperature&&d.rul){temps.push(parseFloat(d.temperature));ruls.push(parseFloat(d.rul));}});
+Plotly.newPlot('nasa-temp',[{
+  x:temps,y:ruls,type:'scatter',mode:'markers',
+  marker:{size:8,color:'#f59e0b',opacity:0.7}
+}],{...layout,xaxis:{title:'Temperature (°C)'},yaxis:{title:'RUL (cycles)'}},config);
+}});
+
+// Feature Importance
+Papa.parse('https://raw.githubusercontent.com/gosidehustlesisi/sierra-applied-ml/main/projects/demand-forecasting-operations/figures/feature_importance.csv',{download:true,header:true,complete:function(r){
+const feats=[],imps=[];
+r.data.forEach(d=>{if(d.feature&&d.importance){feats.push(d.feature);imps.push(parseFloat(d.importance));}});
+feats.slice(0,15);imps.slice(0,15);
+Plotly.newPlot('features',[{
+  x:feats,y:imps,type:'bar',
+  marker:{color:'#10b981',line:{color:'#34d399',width:1}}
+}],{...layout,xaxis:{tickangle:-45},yaxis:{title:'Importance'}},config);
+}});
+</script>
+</body>
+</html>

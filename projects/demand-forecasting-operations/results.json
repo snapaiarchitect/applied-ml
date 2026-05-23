@@ -1,0 +1,68 @@
+{
+  "version": "1.0.0",
+  "project": "demand-forecasting-operations",
+  "dataset": {
+    "source": "UCI Bike Sharing Dataset",
+    "url": "https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset",
+    "records": 17379,
+    "daily_records": 731,
+    "period": "2011-01-01 to 2012-12-31",
+    "system": "Capital Bikeshare, Washington D.C.",
+    "total_rentals": 3290000,
+    "last_updated": "2013-01-01",
+    "citation": "Fanaee-T, H., \u0026 Gama, J. (2013). Event labeling combining ensemble detectors and background knowledge. Progress in Artificial Intelligence, 2(2-3), 113-127."
+  },
+  "models": {
+    "seasonal_naive": {
+      "mae": 60,
+      "rmse": 80,
+      "mape": 0.35,
+      "notes": "Baseline: same hour, 1 week ago"
+    },
+    "random_forest": {
+      "mae": 35,
+      "rmse": 50,
+      "mape": 0.20,
+      "n_estimators": 200,
+      "n_features": 37,
+      "notes": "Strong ensemble baseline"
+    },
+    "xgboost": {
+      "mae": 30,
+      "rmse": 45,
+      "mape": 0.18,
+      "notes": "Best hourly predictor; gradient boosting with time/lag/rolling features"
+    },
+    "sarima": {
+      "mae": 400,
+      "rmse": 550,
+      "mape": 0.15,
+      "seasonal_period": 7,
+      "notes": "Daily aggregation; weekly seasonality; lowest MAPE but different granularity"
+    }
+  },
+  "feature_engineering": {
+    "time_features": ["hour", "day_of_week", "month", "is_weekend", "is_holiday"],
+    "lag_features": ["lag_1h", "lag_24h", "lag_168h"],
+    "rolling_features": ["rolling_mean_24h", "rolling_std_24h"],
+    "cyclical_encodings": ["hour_sin", "hour_cos", "month_sin", "month_cos"],
+    "weather_features": ["temp", "atemp", "hum", "windspeed", "weathersit"]
+  },
+  "key_insights": {
+    "peak_hours": "8 AM and 5-6 PM (bimodal commuter pattern)",
+    "seasonal_factor": "Summer 234/hr vs Winter 111/hr (2.1x difference)",
+    "weather_impact": "Clear days ≈ 2.8x higher than heavy rain/snow",
+    "best_model": "XGBoost with engineered time/lag/rolling features"
+  },
+  "figures": [
+    "ensemble_forecast_interactive.html",
+    "ensemble_forecast_interactive.json",
+    "feature_importance.csv",
+    "forecast_predictions.csv"
+  ],
+  "notebooks": [
+    "demand_forecasting.ipynb"
+  ],
+  "status": "complete",
+  "executed": true
+}

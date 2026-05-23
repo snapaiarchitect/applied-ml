@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "project": "predictive-maintenance-transit",
+  "dataset": {
+    "source": "NASA C-MAPSS FD001",
+    "url": "https://ti.arc.nasa.gov/tech/dash/groups/pcoe/prognostic-data-repository/",
+    "records": 20631,
+    "engines_train": 100,
+    "engines_test": 100,
+    "sensors": 21,
+    "last_updated": "2008-10-01",
+    "citation": "A. Saxena et al., PHM08, Denver CO, 2008"
+  },
+  "models": {
+    "random_forest": {
+      "mae_cycles": 16.2,
+      "rmse_cycles": 22.8,
+      "r2": 0.55,
+      "notes": "Baseline ensemble model"
+    },
+    "xgboost": {
+      "mae_cycles": 15.1,
+      "rmse_cycles": 21.9,
+      "r2": 0.58,
+      "notes": "Best performer, gradient boosting"
+    }
+  },
+  "feature_engineering": {
+    "rolling_window": 10,
+    "normalization": "min-max",
+    "dropped_sensors": ["sensor_1", "sensor_5", "sensor_10", "sensor_16", "sensor_18", "sensor_19"],
+    "top_features": ["sensor_11", "sensor_4", "sensor_12", "sensor_7", "sensor_15"]
+  },
+  "figures": [
+    "feature_importance.png",
+    "predicted_vs_actual_rul.png",
+    "rul_degradation_trajectories.png",
+    "rul_distributions.png",
+    "rul_residuals.png",
+    "sensor_degradation_curves.png",
+    "sensor_rul_correlation.png",
+    "sensor_degradation_interactive.html"
+  ],
+  "notebooks": [
+    "01_eda_and_preprocessing.ipynb",
+    "02_survival_analysis.ipynb",
+    "03_anomaly_detection.ipynb",
+    "predictive_maintenance_analysis.ipynb"
+  ],
+  "status": "complete",
+  "executed": true
+}
