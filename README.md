@@ -261,6 +261,30 @@ streamlit run projects/nlp-text-classification-pipeline/dashboard.py
 streamlit run projects/demand-forecasting-operations/dashboard.py
 ```
 
+### 🐳 Docker (One-Command Launch)
+
+Run every dashboard in containers with a single command:
+
+```bash
+# Clone and launch all dashboards
+git clone https://github.com/snapaiarchitect/applied-ml.git
+cd applied-ml
+docker compose up
+```
+
+| Dashboard | URL |
+|-----------|-----|
+| Predictive Maintenance | http://localhost:8501 |
+| NLP Classification | http://localhost:8502 |
+| Demand Forecasting | http://localhost:8503 |
+
+```bash
+# Or run individual dashboards
+docker compose up predictive-maintenance
+docker compose up nlp-classification
+docker compose up demand-forecasting
+```
+
 ### Requirements
 
 ```bash
