@@ -272,7 +272,7 @@ sierra-applied-ml/
 ## Contact
 
 **Sierra Napier**
-- 🔗 GitHub: [@gosidehustlesisi](https://github.com/gosidehustlesisi)
+- 🔗 GitHub: [@snapaiarchitect](https://github.com/snapaiarchitect)
 - 🌐 Portfolio: [goaiarchitect.io](https://goaiarchitect.io) · [e3-ai.com](https://e3-ai.com)
 - 💼 LinkedIn: [sierra-napier](https://linkedin.com/in/sierra-napier)
 - 📧 Open to fractional CMO / Growth Lead / Applied ML roles
