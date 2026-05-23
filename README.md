@@ -66,19 +66,19 @@ These three projects demonstrate what I bring to an applied ML role: **end-to-en
 ### Key Visualizations
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-applied-ml/main/projects/predictive-maintenance-transit/figures/sensor_degradation_curves.png" width="700" alt="Sensor Degradation Curves">
+  <img src="https://raw.githubusercontent.com/snapaiarchitect/applied-ml/main/projects/predictive-maintenance-transit/figures/sensor_degradation_curves.png" width="700" alt="Sensor Degradation Curves">
   <br>
   <em><strong>Peak insight:</strong> Sensor 11 (HPC outlet temperature) and Sensor 4 (LPC outlet temperature) are the strongest predictors of engine degradation — visible as divergence curves well before failure.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-applied-ml/main/projects/predictive-maintenance-transit/figures/predicted_vs_actual_rul.png" width="700" alt="Predicted vs Actual RUL">
+  <img src="https://raw.githubusercontent.com/snapaiarchitect/applied-ml/main/projects/predictive-maintenance-transit/figures/predicted_vs_actual_rul.png" width="700" alt="Predicted vs Actual RUL">
   <br>
   <em><strong>Peak insight:</strong> XGBoost clusters tightly around the perfect-prediction line for mid-range RUL values; the model is most reliable when engines are neither brand-new nor already failing.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-applied-ml/main/projects/predictive-maintenance-transit/figures/feature_importance.png" width="700" alt="Feature Importance">
+  <img src="https://raw.githubusercontent.com/snapaiarchitect/applied-ml/main/projects/predictive-maintenance-transit/figures/feature_importance.png" width="700" alt="Feature Importance">
   <br>
   <em><strong>Peak insight:</strong> Engineered rolling-mean and rate-of-change features dominate raw sensor readings — proof that domain-informed preprocessing outperforms throwing raw signals at a model.</em>
 </p>
@@ -126,19 +126,19 @@ These three projects demonstrate what I bring to an applied ML role: **end-to-en
 ### Key Visualizations
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-applied-ml/main/projects/nlp-text-classification-pipeline/figures/confusion_matrix.png" width="700" alt="Confusion Matrix">
+  <img src="https://raw.githubusercontent.com/snapaiarchitect/applied-ml/main/projects/nlp-text-classification-pipeline/figures/confusion_matrix.png" width="700" alt="Confusion Matrix">
   <br>
   <em><strong>Peak insight:</strong> Misclassifications cluster within super-categories (comp.* → comp.*, sci.* → sci.*) — the model captures semantic hierarchy even when individual labels are wrong.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-applied-ml/main/projects/nlp-text-classification-pipeline/figures/model_comparison.png" width="700" alt="Model Comparison">
+  <img src="https://raw.githubusercontent.com/snapaiarchitect/applied-ml/main/projects/nlp-text-classification-pipeline/figures/model_comparison.png" width="700" alt="Model Comparison">
   <br>
   <em><strong>Peak insight:</strong> Simple Naive Bayes with TF-IDF outperforms more complex models on this benchmark — a reminder that speed and interpretability often matter more than marginal accuracy gains.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-applied-ml/main/projects/nlp-text-classification-pipeline/figures/top_tfidf_features.png" width="700" alt="Top TF-IDF Features">
+  <img src="https://raw.githubusercontent.com/snapaiarchitect/applied-ml/main/projects/nlp-text-classification-pipeline/figures/top_tfidf_features.png" width="700" alt="Top TF-IDF Features">
   <br>
   <em><strong>Peak insight:</strong> Discriminating words are domain-specific and intuitive ("space" for sci.space, "graphics" for comp.graphics) — the model learned real semantic signals, not statistical noise.</em>
 </p>
@@ -224,7 +224,7 @@ This project generates **interactive HTML ensemble forecasts** and CSV predictio
 
 ```bash
 # Clone the repo
-git clone https://github.com/gosidehustlesisi/sierra-applied-ml.git
+git clone https://github.com/snapaiarchitect/applied-ml.git
 cd sierra-applied-ml
 
 # Install dependencies
