@@ -31,3 +31,7 @@ polars>=0.18
 # MLOps
 mlflow>=2.5
 docker>=6.0
+
+# Docker / Dashboard
+streamlit>=1.28.0
+plotly>=5.15.0
