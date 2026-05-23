@@ -32,6 +32,16 @@
 
 ## About This Work
 
+I don't just run models. I build the pipelines that make them reproducible, the visualizations that make them actionable, and the documentation that makes them hireable.
+
+This repository is three production-grade ML systems trained on real public data — not synthetic toy datasets. The throughline is simple: every project starts with a real dataset download, not a `generate_data.py` script. NASA engine telemetry. 20 Newsgroups text. UCI bike-sharing time series. Real records, real noise, real preprocessing decisions.
+
+> **TL;DR** — If you need someone who can ingest sensor data, build ensemble forecasts, and deploy interactive dashboards — not just fit a model in a notebook — this is what that looks like.
+
+---
+
+## About This Work
+
 This portfolio was built by **Sierra Napier** — data scientist, AI architect, and founder of [evo3](https://e3-ai.com). With an MPA/MPH background spanning enterprise consulting and public-sector analytics, I treat every dataset as a decision-support problem, not a Kaggle exercise.
 
 These three projects demonstrate what I bring to an applied ML role: **end-to-end pipelines on real public data**, from telemetry ingestion to deployed forecasting models. No synthetic CSVs. No `make_classification` stand-ins. Every sensor reading, every Usenet post, every rental record was fetched from an actual public source, cleaned, explored, modeled, and documented.
@@ -234,6 +244,21 @@ pip install -r requirements.txt
 jupyter notebook projects/predictive-maintenance-transit/notebooks/predictive_maintenance_analysis.ipynb
 jupyter notebook projects/nlp-text-classification-pipeline/notebooks/nlp_classification_analysis.ipynb
 jupyter notebook projects/demand-forecasting-operations/notebooks/demand_forecasting.ipynb
+```
+
+### 🚀 Launch Streamlit Dashboards
+
+Each project includes an interactive Streamlit demo:
+
+```bash
+# Predictive Maintenance Dashboard
+streamlit run projects/predictive-maintenance-transit/dashboard.py
+
+# NLP Classification Dashboard
+streamlit run projects/nlp-text-classification-pipeline/dashboard.py
+
+# Demand Forecasting Dashboard
+streamlit run projects/demand-forecasting-operations/dashboard.py
 ```
 
 ### Requirements
